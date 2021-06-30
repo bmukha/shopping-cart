@@ -1,21 +1,27 @@
 import Item from "./Item";
 import React, { useContext } from "react";
 import { Context } from "./Context";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 
 export default function Shop() {
   const items = useContext(Context);
   const itemCarts = items.map((item) => (
-    <Item
-      id={item.id}
-      title={item.title}
-      url={item.image}
-      description={item.description}
-    />
+    <Grid item xs={12} sm={6} md={3}>
+      <Item
+        key={item.id}
+        title={item.title}
+        url={item.image}
+        price={item.price}
+        description={item.description}
+      />
+    </Grid>
   ));
   return (
-    <div>
-      I'm shop
-      {itemCarts}
-    </div>
+    <Container>
+      <Grid container spacing={3}>
+        {itemCarts}
+      </Grid>
+    </Container>
   );
 }

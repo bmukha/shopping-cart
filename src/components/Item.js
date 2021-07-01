@@ -26,9 +26,9 @@ export default function Item(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {props.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
-          </Typography>
+          {/*<Typography variant="body2" color="textSecondary" component="p">
+              {props.description}
+            </Typography>*/}
           <Typography gutterBottom variant="h5" component="h2">
             ${props.price}
           </Typography>
